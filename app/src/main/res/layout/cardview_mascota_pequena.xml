@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota_pequena"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:elevation="3dp"
+    card_view:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/iperropequeno"
+            android:layout_width="122dp"
+            android:layout_height="110dp"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/dog1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#77FFFFFF"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRatepequeno"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/iperro"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageViewpequeno"
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_weight="1"
+                card_view:srcCompat="@drawable/dogbonegreen" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

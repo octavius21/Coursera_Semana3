@@ -1,4 +1,4 @@
-package com.example.semana3_3;
+package com.example.semana3_3.adaptador;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.semana3_3.Objetos.Mascota;
+import com.example.semana3_3.R;
 
 import java.util.ArrayList;
 

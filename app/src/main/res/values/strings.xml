@@ -5,4 +5,31 @@
     <string name="raza">raza</string>
     <string name="especie">especie</string>
     <string name="contador">0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main3">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="pedir_nombre">Escribe tu nombre</string>
+    <string name="pedir_fnacimiento">Escribe tu Fecha de nacimiento</string>
+    <string name="pedir_telefono">Escribe tu numero telefonico</string>
+    <string name="pedir_email">Escribe tu correo electrónico</string>
+    <string name="pedir_desccripcion">Cuerpo</string>
+    <string name="confirmar">Corfirmar Datos</string>
+    <string name="fnacimiento">Fecha de Nacimiento: </string>
+    <string name="tel">Tel: </string>
+    <string name="email">Email: </string>
+    <string name="descripcion">Descripcion: </string>
+    //BUTTON
+    <string name="btnsiguiente">Enviar Comentario</string>
+    <string name="btneditar">Editar Datos</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="pedir_asunto">Asunto</string>
+    <string name="pedir_destinatario">Para:</string>
+    <string name="pedir_contraseña">Tu contraseña</string>
 </resources>

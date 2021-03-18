@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.semana3_3.Objetos.Mascota;
+import com.example.semana3_3.adaptador.MascotaAdaptador;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
         actionbar=findViewById(R.id.miActionBar);
         setSupportActionBar(actionbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        rvMascota_fab = findViewById(R.id.rvMascota_fab);
+//        rvMascota_fab = findViewById(R.id.rvMascota_fab);
         try{
         mascotas= (ArrayList<Mascota>) getIntent().getSerializableExtra("arreglo");
         mascotas_fab=new ArrayList<Mascota>();

@@ -1,50 +1,73 @@
 package com.example.semana3_3;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
-import android.widget.Toolbar;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.example.semana3_3.Objetos.Mascota;
+import com.example.semana3_3.adaptador.MascotaAdaptador;
+import com.example.semana3_3.adaptador.PageAdapter;
+import com.example.semana3_3.fragment.PerfilMascotaFragment;
+import com.example.semana3_3.fragment.RecyclerViewFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
-    RecyclerView rvMascota;
-    MascotaAdaptador mascotaAdaptador;
+    ArrayList<Fragment>fragments;
     androidx.appcompat.widget.Toolbar actionbar;
-
+    Toolbar toolbar;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    FloatingActionButton fabCamara;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        actionbar = findViewById(R.id.miActionBar);
-        setSupportActionBar(actionbar);
-        rvMascota = findViewById(R.id.rvMascota);
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Daisy", 5, "Perro", "Terry", "Margarita", R.drawable.dog1));
-        mascotas.add(new Mascota("Sky", 2, "Perro", "Cruza", "Susana", R.drawable.dog2));
-        mascotas.add(new Mascota("Georgi", 4, "Perro", "Korki", "Tania", R.drawable.dog3));
-        mascotas.add(new Mascota("Hunter", 7, "Perro", "Cruza", "Valeria", R.drawable.dog4));
-        mascotas.add(new Mascota("Porfirio", 1, "Perro", "Salchica", "Grisel", R.drawable.dog5));
+//        actionbar = findViewById(R.id.miActionBar);
+//        setSupportActionBar(actionbar);
+        fabCamara=findViewById(R.id.fabCamara);
+        toolbar=findViewById(R.id.toolbar);
+        tabLayout=findViewById(R.id.tablayout);
+        viewPager=findViewById(R.id.viewPager);
+        setUpViewPager();
+        if(toolbar!=null){
+            setSupportActionBar(toolbar);
+        }
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvMascota.setLayoutManager(llm);
-        mascotaAdaptador = new MascotaAdaptador(mascotas, this);
-        rvMascota.setAdapter(mascotaAdaptador);
+        fabCamara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
     }
-
-    private void setSupportActionBar(Toolbar actionbar) {
+    private ArrayList<Fragment> AgregarFragments(){
+         fragments=new ArrayList<Fragment>();
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new PerfilMascotaFragment());
+        return fragments;
+    }
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),AgregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_dog);
     }
 
     //Para que se ponga en mi action bar
@@ -65,7 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.opciones:
+                Intent intent_user = new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent_user);
                return true;
+            case R.id.acercade:
+
             default:
                 return super.onOptionsItemSelected(item);
 

@@ -9,8 +9,4 @@
     android:textAlignment="center"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
-<!--    <include android:id="@+id/mMenu"-->
-<!--        layout="@menu/menu_opciones"></include>-->
-
-
 </androidx.appcompat.widget.Toolbar>
