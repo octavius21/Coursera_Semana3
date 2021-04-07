@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.semana3_3.Objetos.Mascota;
 import com.example.semana3_3.R;
+import com.example.semana3_3.db.ConstructorMascota;
 
 import java.util.ArrayList;
 
@@ -44,12 +45,13 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             public void onClick(View v) {
                 mascota.setRate(mascota.getRate()+1);
                 Toast.makeText(context, "¡Le diste Like!", Toast.LENGTH_SHORT).show();
-                mascotaViewHolder.ibBone.setEnabled(false);
-                mascotaViewHolder.tvRate.setText(String.valueOf(mascota.getRate()));
+//                mascotaViewHolder.ibBone.setEnabled(false)
+                ConstructorMascota constructorMascota=new ConstructorMascota(context);
+                constructorMascota.darLikeMascota(mascota);
+                mascotaViewHolder.tvRate.setText(String.valueOf(constructorMascota.obtenerLikesMascota(mascota)));
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return mascotas.size();

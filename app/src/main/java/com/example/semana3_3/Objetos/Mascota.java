@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class Mascota implements Serializable {
 
+
     //ATRIBUTOS
+    int id;
     String nombre;
     int edad;
     int rate=0;
@@ -13,7 +15,7 @@ public class Mascota implements Serializable {
     String raza;
     String dueño;
 
-    public Mascota(String nombre, int edad, String especie, String raza, String dueño, int foto) {
+    public Mascota(String nombre, int edad, String especie, String raza, String dueño, int foto,int id) {
         this.nombre = nombre;
         this.edad = edad;
         this.especie = especie;
@@ -22,7 +24,7 @@ public class Mascota implements Serializable {
         this.foto=foto;
     }
 
-    public Mascota(String nombre, int edad, String especie, String raza, String dueño, int foto, int rate) {
+    public Mascota(String nombre, int edad, String especie, String raza, String dueño, int foto, int rate, int id) {
         this.nombre = nombre;
         this.edad = edad;
         this.especie = especie;
@@ -30,6 +32,10 @@ public class Mascota implements Serializable {
         this.dueño = dueño;
         this.foto=foto;
         this.rate=rate;
+    }
+
+    public Mascota() {
+
     }
 
     public int getFoto() {
@@ -88,5 +94,13 @@ public class Mascota implements Serializable {
     public void setDueño(String dueño) {
         this.dueño = dueño;
     }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 }

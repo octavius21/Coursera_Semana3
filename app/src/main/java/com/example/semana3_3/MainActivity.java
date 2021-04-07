@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.favorit:
 //                Bundle bundle=new Bundle();
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("arreglo",mascotas);
                 startActivity(intent);
                 return true;
             case R.id.opciones:
